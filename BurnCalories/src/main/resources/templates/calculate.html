@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Registration</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<!-- create navigation bar ( header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" th:href="@{/}">BurnCaloriesApplication</a>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<!-- Create HTML registration form -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <h1>Calculate your limits:</h1>
+
+            <form th:action="@{/calculate}" method="post">
+                <div class="form-group">
+                    <label class="control-label" for="firstName"> Choose your gender </label>
+                    <select id="firstName" class="form-control" name="gender"
+                           required autofocus="autofocus">
+                        <option value="M">Man</option>
+                        <option value="W">Woman</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="high"> Choose your high </label> <input
+                        id="high" class="form-control" name="high" type="number"
+                        required autofocus="autofocus" />
+                </div>
+                <div class="form-group">
+                    <label class="control-label" for="lastName"> Choose your age </label> <input
+                        id="lastName" class="form-control" name="age" type="number"
+                        required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="email"> Choose your weight</label> <input
+                        id="email" class="form-control" name="weight" required
+                        autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="password"> Choose your level of activity </label>
+                    <select id="password" class="form-control" name="activityLevel" required autofocus="autofocus">
+                    <option value="min">Minimum</option>
+                    <option value="low">Low</option>
+                    <option value="mid">Medium</option>
+                    <option value="upmid">Upper medium</option>
+                    <option value="high">High</option>
+                </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Calculate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
