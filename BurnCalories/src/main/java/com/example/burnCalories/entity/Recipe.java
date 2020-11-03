@@ -14,7 +14,7 @@ public class Recipe {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
     String name;
-    String desc;
+    String description;
     int calories;
     int carbs;
     int fat;

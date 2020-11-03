@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Add recipe</title>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<!-- create navigation bar ( header) -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed"
+                    data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+                    aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span> <span
+                    class="icon-bar"></span> <span class="icon-bar"></span> <span
+                    class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" th:href="@{/}">BurnCaloriesApplication</a>
+        </div>
+    </div>
+</nav>
+
+<br>
+<br>
+<!-- Create HTML registration form -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+
+            <h1>Add recipe</h1>
+
+            <form th:action="@{/recipes/add}" method="post" th:object="${recipe}">
+                <div class="form-group">
+                    <label class="control-label" for="firstName"> Name </label>
+                    <input id="firstName" class="form-control" th:field="*{name}"
+                           required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="lastName"> Description </label> <input
+                        id="lastName" class="form-control" th:field="*{description}"
+                        required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="email"> Calories </label> <input
+                        id="email" class="form-control" th:field="*{calories}" required
+                        autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="password"> Carbs </label> <input
+                        id="password" class="form-control"
+                        th:field="*{carbs}" required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="fat"> Fat </label> <input
+                        id="fat" class="form-control"
+                        th:field="*{fat}" required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" for="protein"> Protein </label> <input
+                        id="protein" class="form-control"
+                        th:field="*{protein}" required autofocus="autofocus" />
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success">Add</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
